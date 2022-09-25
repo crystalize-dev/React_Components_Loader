@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --size: 6px;
+    --scale: 4px;
+
+    --back: #16161a;
+    --animate: rotate infinite linear;
+    --main-color: rgba(255, 0, 0, 1);
+    --glow: rgba(255, 0, 0, 0.2);
+}
+
+body {
+    background: var(--back);
+}
+
+.wrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.road {
+    position: absolute;
+
+    height: 50px;
+    width: 50px;
+
+    background: transparent;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.5);
+
+    border-radius: 50%;
+}
+
+.stick {
+    position: absolute;
+    top:-2px;
+    left:-2px;
+
+    width: 54px;
+    height: 54px;
+    border-radius: 40px;
+    border-top: 1px solid var(--main-color);
+    box-shadow: 0 -10px 15px 2px var(--glow);
+
+    animation: rotate 2s infinite linear;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
